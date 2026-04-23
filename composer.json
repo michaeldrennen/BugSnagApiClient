@@ -1,0 +1,24 @@
+{
+    "name": "michaeldrennen/bugsnag-api-client",
+    "description": "A PHP client library to interface with the BugSnag API.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MichaelDrennen\\BugSnagApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Drennen",
+            "email": "michaeldrennen74@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.5"
+    }
+}
