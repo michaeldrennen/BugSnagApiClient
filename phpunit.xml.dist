@@ -13,4 +13,12 @@
             <directory>src</directory>
         </include>
     </source>
+    <php>
+        <!-- Define your real Bugsnag Personal Auth Token here for integration tests -->
+        <!-- Copy this file to phpunit.xml and do not commit phpunit.xml to version control -->
+        <env name="BUGSNAG_AUTH_TOKEN" value="your-real-token-here"/>
+        <!-- Optional: Define an organization ID to test against -->
+        <!-- 24-character hexadecimal MongoDB-style ID -->
+        <env name="BUGSNAG_TEST_ORG_ID" value="your-org-id-here"/>
+    </php>
 </phpunit>

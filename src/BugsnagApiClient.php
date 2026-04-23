@@ -54,7 +54,7 @@ class BugsnagApiClient
      */
     public function getOrganizations(): array
     {
-        return $this->get('organizations');
+        return $this->get('user/organizations');
     }
 
     /**

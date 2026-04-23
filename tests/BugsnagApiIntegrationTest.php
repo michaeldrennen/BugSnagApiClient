@@ -40,11 +40,16 @@ class BugsnagApiIntegrationTest extends TestCase
 
     public function testRealGetProjects()
     {
-        if (!$this->testOrgId || $this->testOrgId === 'your-org-id-here') {
-            $this->markTestSkipped('BUGSNAG_TEST_ORG_ID is not set in phpunit.xml. Cannot test retrieving projects.');
+        // Fetch organizations to get a valid ID for testing
+        $organizations = $this->client->getOrganizations();
+        
+        if (empty($organizations)) {
+            $this->markTestSkipped('No organizations found for this token. Cannot test retrieving projects.');
         }
 
-        $response = $this->client->getProjects($this->testOrgId);
+        $realOrgId = $organizations[0]['id'];
+
+        $response = $this->client->getProjects($realOrgId);
 
         $this->assertIsArray($response);
         
