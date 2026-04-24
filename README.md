@@ -19,6 +19,14 @@ To use this client, you must generate a **Personal Auth Token** from your Bugsna
 
 > **Note:** This token is different from your project-level "API Key" used for reporting errors.
 
+## Finding IDs and Credentials
+
+Many API endpoints require specific IDs (like an Organization ID or Project ID). While you can extract these programmatically using the API itself (e.g., calling `$client->getOrganizations()`), you can also find them manually in your Bugsnag dashboard:
+
+*   **Organization ID:** In the Bugsnag dashboard, navigate to **Settings > Organization settings**. The Organization ID is typically the 24-character hexadecimal string found in the URL. (e.g., `https://app.bugsnag.com/settings/organizations/50baed0d9bf39c1431000003/...`)
+*   **Project ID:** Navigate to **Settings > Project settings**. Similar to the organization, the Data Access API requires the 24-character hexadecimal Project ID, which can be found in the URL while viewing the project settings.
+*   **Error ID & Event ID:** When viewing a specific error or event in your Bugsnag dashboard, the long alphanumeric strings present in the URL are the respective IDs.
+
 ## Basic Usage
 
 Instantiate the client by passing your Personal Auth Token.
